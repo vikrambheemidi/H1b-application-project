@@ -1,0 +1,5 @@
+create view cntyear as select year,count(case_status) as count1 from h1b_final group by year;
+create view cntcasestatus as select year,case_status,count(case_status) as count2 from h1b_final group by case_status,year;
+select a.year,b.case_status,((b.count2*100)/a.count1) as percentage from cntyear a,cntcasestatus b where a.year=b.year order by year;
+drop view cntyear;
+drop view cntcasestatus;
