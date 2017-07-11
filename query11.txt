@@ -1,0 +1,1 @@
+ sqoop export --connect jdbc:mysql://localhost/h1b --username root --password '12345' --table h1bjobpositions --export-dir /home/hduser/result/part-r-00000  --input-fields-terminated-by '\t'
